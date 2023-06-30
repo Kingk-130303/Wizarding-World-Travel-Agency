@@ -1,0 +1,72 @@
+1) Magical Creature Encyclopedia
+
+The website needs to be interactive and responsive. You need to create a platform whose purpose is to inform and educate people about the different kinds of beasts in the harry potter universe. 📚
+
+Some Features that we expect:
+
+📌Search functionality
+📌Category division and organization
+📌Favorites and bookmarking
+
+
+2) Quidditch Sports Website
+
+In the magical realm of Quidditch, there is a lack of dedicated online platforms that represent Quidditch teams and provide an immersive experience for fans.
+
+We expect a website representing a Quidditch team, complete with team rosters, match schedules, and interactive elements simulating the excitement of the famous wizarding sport, Previous matches data, and Ticket selling portal.
+
+Two main roles User and Administrator.
+
+Features we expect
+📌Authorization for user and admin
+📌User being able to search and see past data of matches
+📌User being able to register for the matches
+📌Admin being able to add/update/delete events and event data
+📌Admin being able to view the registrations.
+
+3) Wizarding World Travel Agency
+
+In the magical world of Harry Potter, enthusiasts face a lack of platforms that cater specifically to their travel needs. There is a pressing need for a website that serves as a comprehensive travel agency, offering specialized trips to various wizarding world destinations.🧙‍♂️💻
+
+The Wizarding World Travel Agency should enable users to navigate through different locations, access detailed information about travel packages, and conveniently make bookings. 🧳✈️
+
+Some features we expect:
+
+📌Authorization for user and admin
+
+📌User should see different travel packages with itineraries and pricing details
+
+📌Secure online booking system along with ratings and reviews.
+
+4) Hogwarts School Portal
+
+Hogwarts faces a noticeable absence of a dedicated online portal that allows students to immerse themselves in the magical experience fully. As a result, there is a pressing need for participants to create a website that serves as a comprehensive gateway to Hogwarts.🏰🧙‍♂️
+
+Some features we expect:
+
+📌Admin, Student, and Faculty Authorization.
+
+📌Admin should be able to add/update/delete courses, faculties, and students.
+
+📌House points tracking system,
+
+📌Announcements to students and faculties.
+
+Student features:
+
+📌User profiles with house affiliations.
+
+📌Being able to register/drop or view a course.
+
+📌Access to course material and a progress tracking system (GPA)
+
+📌Notifications for upcoming events and examinations.
+
+Faculty features:
+
+📌Attendance system
+
+📌Being able to view/add/delete students
+
+📌Notifications for upcoming events and examinations.
+
