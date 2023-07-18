@@ -30,7 +30,13 @@ const Login = () => {
       }).then(response => response.json()).then(data => {
         alert('Login successful');
         localStorage.setItem('jwtToken', data.token);
-        window.location.href = '/homepage';
+        console.log(data.user.email)
+        if (data.user.userType === "User"){
+        window.location.href = '/userpage';
+        }
+        else{
+          window.location.href = '/adminpage'
+        }
       }).catch(err => {
         alert('Login Failed\nInvalid email or password');
       })

@@ -19,10 +19,11 @@
   
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="radio"] {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(79, 80, 83);
     border-radius: 4px;
   }
   
