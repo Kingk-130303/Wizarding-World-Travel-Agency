@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import '../css/login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -13,17 +15,31 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  async function handleLogin(e) {
     e.preventDefault();
-    // Implement your login logic here
-    console.log('Login submitted');
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
+   
+      await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      }).then(response => response.json()).then(data => {
+        alert('Login successful');
+        localStorage.setItem('jwtToken', data.token);
+        window.location.href = '/homepage';
+      }).catch(err => {
+        alert('Login Failed\nInvalid email or password');
+      })
+    }
+  
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>
         <input
           type="email"

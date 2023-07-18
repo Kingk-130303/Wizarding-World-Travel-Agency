@@ -6,17 +6,32 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    // Handle sign up logic here
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setPassword('');
-  };
+  
+	async function handleSignUp(event) {
+		event.preventDefault()
+
+		const response = await fetch('http://localhost:5000/api/auth/createuser', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				name,
+				email,
+				password,
+			}),
+		})
+		const data = await response.json()
+		// console.log(data);
+		if (data.status === 'ok') {
+			alert('Sign up successful')
+			window.location.href = '/login'
+		}
+    else{
+      alert(data.error)
+    }
+  
+	}
 
   return (
     <div className="signup-container">

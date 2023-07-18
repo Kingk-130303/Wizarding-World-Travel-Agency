@@ -1,27 +1,42 @@
-// Homepage.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import '../css/homepage.css';
 
+async function fetchData(SetIsLoggedIn) {
+  try {
+    const token = localStorage.getItem('jwtToken');
+    const response = await fetch('http://localhost:5000/api/private', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        token: token
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    if (response.ok) {
+      SetIsLoggedIn(true);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function Homepage() {
+  const [IsLoggedIn, SetIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    fetchData(SetIsLoggedIn);
+  }, []);
+
   return (
     <div>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/tours">Tours</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-          <li><Link to="/login">Login</Link></li>
-        </ul>
-      </nav>
-
-      <section>
-        <h1>Welcome to Our Tour Packages</h1>
-        <p>Explore our amazing tour packages and book your dream tour today.</p>
-        <button className="book-now-button">Book Now</button>
-      </section>
+      {IsLoggedIn ? (
+        <h1>Welcome to the user's home page</h1>
+      ) : (
+        <h1>Invalid access, please login again</h1>
+      )}
     </div>
   );
 }
