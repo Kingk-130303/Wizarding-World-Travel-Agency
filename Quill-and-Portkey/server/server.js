@@ -19,6 +19,7 @@ App.use(cors({
   
 App.use('/api/auth',require('./routes/auth'))
 App.use('/api/private', fetchuser, require('./routes/private'));
+App.use('/admin',require('./routes/admin'))
 
 App.listen(5000,()=>{
     // console.log('App listening at http://localhost:5000')

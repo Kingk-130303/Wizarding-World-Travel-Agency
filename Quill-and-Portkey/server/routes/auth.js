@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 var jwt = require('jsonwebtoken')
 const jwt_secret = "king@123"
 var fetchuser = require('../middleware/fetchuser')
-const cookieParser = require('cookie-parser');
+
 
 
 

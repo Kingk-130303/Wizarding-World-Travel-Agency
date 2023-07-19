@@ -28,9 +28,10 @@ const Login = () => {
           password,
         }),
       }).then(response => response.json()).then(data => {
-        alert('Login successful');
+        
         localStorage.setItem('jwtToken', data.token);
-        console.log(data.user.email)
+        // console.log(data.user.email)
+        alert('Login successful');
         if (data.user.userType === "User"){
         window.location.href = '/userpage';
         }
