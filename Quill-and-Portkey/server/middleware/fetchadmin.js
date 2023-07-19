@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken')
 const jwt_secret = "king@123"
 
 
-const fetchuser = (req, res, next) => {
+const fetchadmin = (req, res, next) => {
     const token = req.body.token;
     // console.log(token)
     if (!token) {
@@ -11,12 +11,14 @@ const fetchuser = (req, res, next) => {
     try {
       const data = jwt.verify(token, jwt_secret);
       req.email = data.email;
-      if (data.usertype !== 'User'){
+      console.log(data.usertype)
+      if (data.usertype !== 'Admin'){
         return res
         .status(401)
-        .send({ error: "Please authenticate using a user token" });
-      }
+        .send({ error: "Please authenticate using a admin token" });
+      } 
       // console.log(req.email)
+      
       next();
     } catch (error) {
         console.log(error)
@@ -26,4 +28,4 @@ const fetchuser = (req, res, next) => {
     }
   };
 
-  module.exports = fetchuser;
+  module.exports = fetchadmin;

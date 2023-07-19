@@ -70,8 +70,10 @@ router.post(
         if (!passwordCompare) {
           return res.status(400).json({ error: 'Login credentials incorrect' });
         }
+        console.log(user.userType)
         const payload = {
-          email: user.email
+          email: user.email,
+          usertype: user.userType
         }
         const token = jwt.sign(payload,jwt_secret,{expiresIn: '1d'})
         res.json({

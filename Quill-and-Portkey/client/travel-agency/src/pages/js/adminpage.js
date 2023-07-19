@@ -6,7 +6,7 @@ import '../css/adminpage.css';
 async function fetchData(SetIsLoggedIn) {
   try {
     const token = localStorage.getItem('jwtToken');
-    const response = await fetch('http://localhost:5000/api/private', {
+    const response = await fetch('http://localhost:5000/api/private/admin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -15,6 +15,8 @@ async function fetchData(SetIsLoggedIn) {
         token: token
       }),
     });
+    const data = await response.json()
+    console.log(data)
     if (response.ok) {
       SetIsLoggedIn(true);
     }
@@ -29,11 +31,9 @@ async function fetchData(SetIsLoggedIn) {
         method: 'GET',
       });
       const data = await response.json();
-      console.log(data)
       setuserData(data.user);
-
     } catch (error) {
-      console.log("hello")
+      console.log(error)
     }
   }
 
@@ -77,7 +77,7 @@ function Adminpage() {
     fetchData(SetIsLoggedIn);
     fetchUserData(setuserData);
   }, []);
-  console.log(userData )
+
 
   return (
     <div>

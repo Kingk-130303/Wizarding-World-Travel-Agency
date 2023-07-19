@@ -4,7 +4,7 @@ import '../css/userpage.css';
 async function fetchData(SetIsLoggedIn) {
   try {
     const token = localStorage.getItem('jwtToken');
-    const response = await fetch('http://localhost:5000/api/private', {
+    const response = await fetch('http://localhost:5000/api/private/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
