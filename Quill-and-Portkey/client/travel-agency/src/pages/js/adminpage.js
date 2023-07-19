@@ -23,21 +23,19 @@ async function fetchData(SetIsLoggedIn) {
   }
 }
 
+  async function fetchUserData(setuserData) {
+    try {
+      const response = await fetch('http://localhost:5000/admin/allUsers', {
+        method: 'GET',
+      });
+      const data = await response.json();
+      console.log(data)
+      setuserData(data.user);
 
-
-async function fetchUserData(setuserData) {
-  try {
-    
-    const response = await fetch('http://localhost:5000/admin/allUsers', {
-      method: 'GET',
-    });
-    const data = await response.json();
-     setuserData(data.data);
-    //  console.log(data.data)
-  } catch (error) {
-    console.log(error);
+    } catch (error) {
+      console.log("hello")
+    }
   }
-}
 
 
 
@@ -79,6 +77,7 @@ function Adminpage() {
     fetchData(SetIsLoggedIn);
     fetchUserData(setuserData);
   }, []);
+  console.log(userData )
 
   return (
     <div>
