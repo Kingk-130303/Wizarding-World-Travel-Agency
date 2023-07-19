@@ -16,7 +16,7 @@ async function fetchData(SetIsLoggedIn) {
       }),
     });
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     if (response.ok) {
       SetIsLoggedIn(true);
     }
@@ -32,6 +32,18 @@ async function fetchData(SetIsLoggedIn) {
       });
       const data = await response.json();
       setuserData(data.user);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function fetchTourData(settourData) {
+    try {
+      const response = await fetch('http://localhost:5000/admin/allTours', {
+        method: 'GET',
+      });
+      const data = await response.json();
+      settourData(data.tour);
     } catch (error) {
       console.log(error)
     }
@@ -69,13 +81,43 @@ const handleLogout = () => {
   }
   }
 
+
+  async function deleteTour(tourName){
+    try {
+    if (window.confirm(`Are you sure you want to delete tour ${tourName}`)){
+        const response = await fetch("http://localhost:5000/admin/deleteTour",{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: tourName,
+          }),
+        })
+        const data = await response.json();
+        window.location.href = '/adminpage'
+    }
+    else{
+
+    }
+  } catch (error) {
+      console.log(error)
+  }
+  }
+
+  function addTour() {
+    window.location.href = '/adminpage/addtour'
+  }
+
 function Adminpage() {
   const [IsLoggedIn, SetIsLoggedIn] = useState(false);
   const [userData, setuserData] = useState([]);
+  const [tourData, settourData] = useState([]);
 
   useEffect(() => {
     fetchData(SetIsLoggedIn);
     fetchUserData(setuserData);
+    fetchTourData(settourData);
   }, []);
 
 
@@ -106,6 +148,33 @@ function Adminpage() {
           </tbody>
         </table>
         <br />
+          <table>
+            <tbody>
+            <tr>  
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Delete</th>
+          </tr>
+          {tourData.map(i=>{
+            return(
+            <tr key={i._id}>
+              <td>{i.name}</td>
+              <td>{i.description}</td>
+              <td>{i.price}</td>
+              <td>{i.duration}</td>
+              <td>
+                <FontAwesomeIcon icon = {faTrash } onClick={()=>deleteTour(i.name)}/>
+              </td>
+            </tr>
+            )
+          })}
+            </tbody>
+          </table>
+        <button onClick={addTour}>Add a new tour</button>
+
+
         <button onClick={handleLogout}>Logout</button></>
 
         

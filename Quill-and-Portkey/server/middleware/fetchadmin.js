@@ -11,7 +11,7 @@ const fetchadmin = (req, res, next) => {
     try {
       const data = jwt.verify(token, jwt_secret);
       req.email = data.email;
-      console.log(data.usertype)
+      // console.log(data.usertype)
       if (data.usertype !== 'Admin'){
         return res
         .status(401)

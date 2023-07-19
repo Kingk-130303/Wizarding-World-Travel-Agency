@@ -5,6 +5,8 @@ import Login from './pages/js/login';
 import Userpage from './pages/js/userpage';
 import LandingPage from './pages/js/landingpage';
 import Adminpage from './pages/js/adminpage';
+import Addtour from './pages/js/addtour';
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/userpage" element={<Userpage/>} />
         <Route path="/adminpage" element={<Adminpage/>} />
+        <Route path="/adminpage/addtour" element={<Addtour/>} />
   
         </Routes>
     </Router>

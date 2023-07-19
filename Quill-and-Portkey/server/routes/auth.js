@@ -70,7 +70,7 @@ router.post(
         if (!passwordCompare) {
           return res.status(400).json({ error: 'Login credentials incorrect' });
         }
-        console.log(user.userType)
+        // console.log(user.userType)
         const payload = {
           email: user.email,
           usertype: user.userType
