@@ -10,7 +10,7 @@ router.post('/admin',fetchadmin,(req,res)=>{
 
 router.post('/user',fetchuser,(req,res)=>{
     // console.log(req.email)
-    res.json({}).status(200);
+    res.json({email: req.email}).status(200);
 })
 
 
