@@ -114,6 +114,11 @@ const handleLogout = () => {
     window.location.href = `adminpage/updatetour`
   }
 
+  async function showRegistrations(tourName){
+    localStorage.setItem("tourName",tourName);
+    // window.location.hre
+  }
+
 function Adminpage() {
   const [IsLoggedIn, SetIsLoggedIn] = useState(false);
   const [userData, setuserData] = useState([]);
@@ -162,6 +167,7 @@ function Adminpage() {
             <th>Duration</th>
             <th>Delete</th>
             <th>Update</th>
+            <th>Registration</th>
           </tr>
           {tourData.map(i=>{
             return(
@@ -176,6 +182,7 @@ function Adminpage() {
               <td>
                 <FontAwesomeIcon icon = {faEdit } onClick={()=>updateTour(i.name)}/>
               </td>
+              <td><button onClick={()=>showRegistrations(i.name)}>Show Registrations</button></td>
             </tr>
             )
           })}
