@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {faTrash} from  "@fortawesome/free-solid-svg-icons";
+import {faTrash,faEdit} from  "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import '../css/adminpage.css';
 
@@ -109,6 +109,11 @@ const handleLogout = () => {
     window.location.href = '/adminpage/addtour'
   }
 
+  async function updateTour(tourName){
+    localStorage.setItem("tourName", tourName); 
+    window.location.href = `adminpage/updatetour`
+  }
+
 function Adminpage() {
   const [IsLoggedIn, SetIsLoggedIn] = useState(false);
   const [userData, setuserData] = useState([]);
@@ -156,6 +161,7 @@ function Adminpage() {
             <th>Price</th>
             <th>Duration</th>
             <th>Delete</th>
+            <th>Update</th>
           </tr>
           {tourData.map(i=>{
             return(
@@ -166,6 +172,9 @@ function Adminpage() {
               <td>{i.duration}</td>
               <td>
                 <FontAwesomeIcon icon = {faTrash } onClick={()=>deleteTour(i.name)}/>
+              </td>
+              <td>
+                <FontAwesomeIcon icon = {faEdit } onClick={()=>updateTour(i.name)}/>
               </td>
             </tr>
             )

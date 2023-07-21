@@ -36,7 +36,7 @@ function Userpage() {
   
     window.location.href = "/login";
   };
-  
+
   async function fetchTourData(settourData) {
     try {
       const response = await fetch("http://localhost:5000/admin/allTours", {
@@ -75,6 +75,10 @@ function Userpage() {
     }
   };
 
+  const myBookings = () =>{
+    window.location.href = '/userpage/userbookings'
+  }
+
   useEffect(() => {
     fetchData(SetIsLoggedIn,setuserEmail);
     fetchTourData(settourData);
@@ -85,6 +89,8 @@ function Userpage() {
       {IsLoggedIn ? (
         <>
           <h1>Welcome to the user's home page</h1>
+          <button onClick={()=>myBookings()}>My bookings</button>
+          <br />
           <div className="tour-list">
       {tourData.map((tour) => (
         <div key={tour._id} className="tour-card">

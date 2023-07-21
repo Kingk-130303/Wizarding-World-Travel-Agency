@@ -6,6 +6,9 @@ import Userpage from './pages/js/userpage';
 import LandingPage from './pages/js/landingpage';
 import Adminpage from './pages/js/adminpage';
 import Addtour from './pages/js/addtour';
+import UserBookings from './pages/js/userBookings';
+import UpdateTourPackageForm from './pages/js/updatetour';
+
 
 
 
@@ -21,8 +24,10 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/userpage" element={<Userpage/>} />
+        <Route path="/userpage/userbookings" element={<UserBookings/>} />
         <Route path="/adminpage" element={<Adminpage/>} />
         <Route path="/adminpage/addtour" element={<Addtour/>} />
+        <Route path="/adminpage/updatetour" element={<UpdateTourPackageForm/>} />
   
         </Routes>
     </Router>
