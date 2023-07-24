@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const Tour = require("../models/Tour");
+const Booking = require("../models/Booking");
+const {body,validationResult} = require('express-validator')
+
 
 router.get("/allUsers", async (req, res) => {
   const user = await User.find({ userType: "User" });
@@ -84,5 +87,86 @@ router.post("/updatetour", async (req, res) => {
       res.status(500).json({ error: "An error occurred while updating the tour package" });
     }
   });
+
+
+  router.post("/tourreg", async (req, res) => {
+    const tourName = req.body.tourname;
+  
+    try {
+        const users = await Booking.find({tourname: tourName});
+        // console.log(users)
+        if (users.length === 0){
+          // console.log("Hello")
+          return res.json({message: "No registrations yet"}).status(404)
+        }
+        res.json({data: users}).status(200);
+      }
+     catch (error) {
+      console.log(error)
+    }
+  });
+
+
+
+  router.post("/removetouruser", async (req, res) => {
+    const useremail = req.body.useremail;
+    const tourname = req.body.tourname;
+  
+    try {
+        await Booking.deleteOne({useremail: useremail,tourname : tourname})
+        res.json({message: "deleted successfully"}).status(200);
+      }
+     catch (error) {
+      console.log(error)
+    }
+  });
+
+  router.post("/findreguser", [
+    body('useremail','Enter valid email').isEmail(),
+] , async (req, res) => {
+
+  const errors = validationResult(req)
+  if (!errors.isEmpty()){
+      return res.status(400).json({message: "Invalid email",status : 400})
+  }
+    const useremail = req.body.useremail;
+ 
+  
+    try {
+      const user = await User.findOne({ email: useremail });
+      if (!user) {
+        
+        return res.json({ message: "User with this email is not registered in our system" ,status: 404}).status(404);
+      }
+      res.json({message: "User exists in our system",status: 200}).status(200)
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "An error occurred while finding the user",status: 500 });
+    }
+  });
+  
+
+
+  router.post("/addtouruser", async (req, res) => {
+    try {
+      const useremail = req.body.useremail;
+      const tourname = req.body.tourname;
+  
+      const touruser = await Booking.findOne({ useremail: useremail, tourname: tourname });
+      if (touruser) {
+        
+        return res.json({ message: "User with this email has already registered in this tour package" ,status: 409});
+      }
+     
+      await Booking.create({ useremail: useremail, tourname: tourname });
+      res.json({ message: "User added successfully" ,status : 200});
+
+    } catch (error) {
+      
+      res.status(500).json({ error: "An error occurred while adding the user to the tour package",status: 500 });
+    }
+  });
+  
+  
 
 module.exports = router;

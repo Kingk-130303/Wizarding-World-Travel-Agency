@@ -116,7 +116,7 @@ const handleLogout = () => {
 
   async function showRegistrations(tourName){
     localStorage.setItem("tourName",tourName);
-    // window.location.hre
+    window.location.href = 'adminpage/tourreg'
   }
 
 function Adminpage() {
