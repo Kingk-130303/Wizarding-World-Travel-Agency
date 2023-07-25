@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/js/signup';
 import Login from './pages/js/login';
 import Userpage from './pages/js/userpage';
-// import LandingPage from './pages/js/landingpage';
+import LandingPage from './pages/js/landingpage';
 import Adminpage from './pages/js/adminpage';
 import Addtour from './pages/js/addtour';
 import UserBookings from './pages/js/userBookings';
 import UpdateTourPackageForm from './pages/js/updatetour';
 import TourRegistrations from './pages/js/tourreg';
-import LandingPage from './pages/js/temppage';
+
 
 
 
