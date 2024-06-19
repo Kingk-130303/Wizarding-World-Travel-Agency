@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; 
+  /* overflow: hidden; */
+}
+
+.home{
+  margin-left: 150px;
+  margin-bottom: 270px;
+}
+
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+
+.animate-bounce-fade {
+  animation: bounceFadeIn 3s ease-in-out; /* Removed 'infinite' */
+  animation-fill-mode: forwards; /* Retains the animation state after it completes */
+}
+
+@keyframes bounceFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+    font-size: 24px; /* Starting font size */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 48px; /* Bigger font size during the animation */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 48px; /* Retain the bigger font size at the end */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply animations to different elements */
+
+.showcase .logo .animate-bounce-fade {
+  animation: bounceFadeIn 2s ease-in-out;
+}
+
+.logo{
+  backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
+  margin-top: 1px;
+  color: #5c3009;
+  font-weight: 700;
+  font-size:50px;
+  
+
+}
+
+.one-liner {
+  border-radius:100px;
+  margin-top: 290px;
+  color: white;
+  font-weight: 800;
+  backdrop-filter: blur(5px); /* Adjust the blur radius as needed */
+  /* background-color: rgba(255, 255, 255, 0.8); Fallback for browsers that do not support backdrop-filter */
+  padding: 10px; /* Add padding to create space around the text */
+}
+
+.showcase .text .animate-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.menu .animate-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.tour-btn{
+  margin-top: 5px;
+  background-color:rgb(202, 202, 142);
+  color: #111;
+  font-weight: bolder;
+}
+
+.tour-btn:hover{
+  cursor: pointer;
+  background-color:rgb(196, 158, 36);
+
+}
+
+
+.toggle
+{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  padding:5px;
+  /* backdrop-filter: 5px; */
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+ 
+}
+.showcase
+{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  right: 300px;
+}
+
+
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fbfbfb;
+  mix-blend-mode: overlay;
+}
+.text
+{
+  margin-top: 100px;
+  position: relative;
+  z-index: 10;
+  padding: -20px; 
+}
+
+
+.menu
+{
+  /* background-color: #f86706; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80'); /* Add semi-transparent overlay */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+
+
+
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+  margin-bottom: 40px;
+  /* padding: 20px; */
+}
+
+.menu ul li:hover
+{
+  /* list-style: none; */
+  cursor: pointer;
+}
+
+.menu ul li a
+{
+  font-weight: 500;
+  text-decoration: none;
+  font-size:25px;
+  color: #111;
+  background-color: #2ea507;
+  border-radius: 10px;
+  padding: 10px;
+  
+}
+.menu ul li a:hover
+{
+  color: #f1f0f0; 
+  background-color: #111;
+  border-radius: 5px;
+}
+
+@media (max-width: 991px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 3em;
+  }
+  .text h3
+  {
+    font-size: 2em;
+  }
+}
+
+#tours {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  color: #fff;
+}
+
+#about-us {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c0c0c;
+  color: #f0eded;
+}
+
+#tours {
+  position: relative;
+  z-index: 1;
+}
+
+.showcase {
+  position: relative;
+  z-index: 2;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+.slide-content {
+  font-weight: 800;
+  padding: 20px;
+  height: fit-content;
+  width: 400px;
+  position: absolute;
+  margin: 100px 450px;
+  color: #f4f2f2;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.301); /* Semi-transparent white background */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Box shadow for glossy effect */
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  cursor: default;
+  text-align: center;
+}
+
+.book-now {
+  padding: 12px 40px; /* Increased padding for better button size */
+  margin: 20px auto; /* Center the button horizontally and add margin for spacing */
+  background-color: #86ec0a; /* Background color */
+  color: #111; /* Text color */
+  border: none;
+  border-radius: 10px;
+  margin-top: 50px;
+  cursor: pointer; /* Pointer cursor on hover */
+  display: block; /* Ensures it takes up full width */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Bold font weight */
+  text-align: center; /* Center align text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.book-now:hover {
+  background-color: #0f0101;
+  color: #eee5e5;
+}
+
+
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.slide-content h2{
+  border-radius: 100px;
+  color: #e7e7e0;
+  background-color: rgb(6, 6, 6);
+  font-size: 50px;
+}
+.prev-btn {
+  font-size: xx-large;
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+  font-size: xx-large;
+
+}
+
+
+
+
+.about-us-content {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(132, 50, 156, 0.9); /* Semi-transparent white background */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 10px;
+}
+
+.about-us-content h2 {
+  font-size: 32px;
+  color: #f5f0f0; /* Darker color for better readability */
+  margin-bottom: 20px;
+  font-weight: 700; /* Bold font weight */
+}
+
+.about-us-content p {
+  font-size: 20px;
+  color: #0f0101; /* Dark color for paragraph text */
+  line-height: 1.6; /* Improved line spacing for readability */
+  margin-bottom: 20px; /* Increased margin to separate paragraphs */
+}
+
+
+
+
+

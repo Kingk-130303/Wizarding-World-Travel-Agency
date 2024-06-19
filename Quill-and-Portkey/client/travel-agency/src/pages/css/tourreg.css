@@ -1,0 +1,73 @@
+/* tourregistrations.css */
+
+/* Add some general styles for the page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2e0cf1;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #2e0cf1;
+    color: #fff;
+  }
+  
+  td {
+    font-weight: 400;
+  }
+  
+  button {
+    background-color: #2e0cf1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #4d33ff;
+  }
+  
+  p.no-registrations {
+    text-align: center;
+    color: #d63447;
+    font-size: 18px;
+  }
+  
+  .add-user-btn {
+    background-color: #d63447;
+  }
+  
+  .add-user-btn:hover {
+    background-color: #ff506e;
+  }
+  

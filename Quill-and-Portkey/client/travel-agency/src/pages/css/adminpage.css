@@ -1,0 +1,108 @@
+/* adminpage.css */
+
+/* Add some general styles for the page */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Style for the user table */
+table.user-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.user-table th,
+table.user-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table.user-table th {
+  background-color: #2e0cf1;
+  color: #fff;
+}
+
+table.user-table td {
+  font-weight: 400;
+}
+
+/* Style for the tour table */
+table.tour-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.tour-table th,
+table.tour-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table.tour-table th {
+  background-color: #d63447;
+  color: #fff;
+}
+
+table.tour-table td {
+  font-weight: 400;
+}
+
+/* Style for buttons */
+button {
+  background-color: #2e0cf1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4d33ff;
+}
+
+/* Style for font awesome icons */
+.icon {
+  cursor: pointer;
+  margin: 0 5px;
+  color: #2e0cf1;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #4d33ff;
+}
+
+/* Attractive styles */
+h2 {
+  color: #d63447;
+  margin-bottom: 15px;
+}
+
+.add-tour-btn {
+  background-color: #d63447;
+}
+
+.add-tour-btn:hover {
+  background-color: #ff506e;
+}

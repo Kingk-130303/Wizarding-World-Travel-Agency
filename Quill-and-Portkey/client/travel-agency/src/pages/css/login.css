@@ -1,0 +1,73 @@
+/* login.css */
+
+.login-container {
+    padding-right: 100px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/images/login.jpg");
+    background-size: cover;
+  }
+  
+  .login-form {
+    width: 300px;
+    padding: 20px;
+    border-radius: 70px;
+    background-color: rgba(255, 255, 255, 0.242); /* Semi-transparent white background */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Box shadow for glossy effect */
+  }
+  
+  /* Apply "Pacifico" font only to h2 elements inside .login-form */
+  .login-form h2 {
+    color: #c58d4d;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .sign-up{
+    font-size: large;
+    padding-left: 30px;
+   font-weight: 700;
+    font-family: 'Pacifico', cursive;
+    color: rgba(0, 0, 0, 0.482);
+
+  }
+
+
+  
+  .login-form input {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .login-form button {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    color: #c58d4d;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .login-form button:hover{
+    background-color: rgba(255, 255, 255, 0.721); /* Semi-transparent white background */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+
+  }
+  
