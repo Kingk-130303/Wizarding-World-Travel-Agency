@@ -262,6 +262,37 @@ header
   color: #fff;
 }
 
+#back-button{
+  margin-left: 90vw;
+  background-color: #e7e7e0;
+  color: black;
+  position: relative;
+
+}
+
+#back-button:hover{
+  background-color: #111;
+  color: white;
+}
+
+#home-button{
+  margin-left: 50vw;
+  /* margin-bottom: 30vh; */
+  margin-top: -20vh;
+  background-color: #e7e7e0;
+  color: black;
+  position: relative;
+
+
+}
+
+#home-button:hover{
+  background-color: #111;
+  color: white;
+}
+
+
+
 #about-us {
   height: 100vh;
   display: flex;

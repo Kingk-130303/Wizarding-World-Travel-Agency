@@ -190,8 +190,9 @@ return (
               <p>Description <br /><br />{tour.description}</p>
               {/* <p>{tour.itenary}</p> */}
              
-              
+
             </div> 
+            <button id='back-button' onClick={() => document.getElementById('showcase').scrollIntoView({ behavior: 'smooth', block: 'start' })}>Home</button>
 
           </div>
         ))}
@@ -211,14 +212,18 @@ return (
 
 
 <section id="about-us" className="about-us-section">
+
   <div className="about-us-content">
   {/* <button className="home" onClick={() => handleMenuToggle('showcase')}>Home</button> */}
+  <button id='home-button' onClick={() => document.getElementById('showcase').scrollIntoView({ behavior: 'smooth', block: 'start' })}>Home</button>
 
     <h2>About Us</h2>
+
     <p>Welcome to Quill & Portkey, where magic meets adventure! Embark on a journey through the wizarding world with us, as we unveil the enchanting landscapes and mystical tales inspired by J.K. Rowling's Harry Potter series. At Quill & Portkey, we're passionate about creating immersive experiences that transport you to the heart of Hogwarts, Diagon Alley, and beyond.
 
 Our team of dedicated wizards and witches are here to curate every detail of your magical adventure. From the moment you step into our world, expect to be enchanted by our commitment to authenticity and quality. Whether you're a first-time visitor or a seasoned witch or wizard, our tours are designed to captivate, educate, and ignite your imagination.</p>
   </div>
+  
 </section>
 
   </div>
