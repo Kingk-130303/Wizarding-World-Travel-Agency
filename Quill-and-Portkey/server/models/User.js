@@ -20,9 +20,9 @@ const UserSchema = new Schema({
     }
     
 },{
-    collection: 'User-data' 
+    collection: 'User-data'
 })
 
 
-const User = mongoose.model('UserData', UserSchema)
+const User = mongoose.model('User-data', UserSchema)
 module.exports = User

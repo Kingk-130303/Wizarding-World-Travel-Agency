@@ -4,7 +4,7 @@ const User = require('../models/User')
 const {body,validationResult} = require('express-validator')
 const bcrypt = require('bcryptjs')
 var jwt = require('jsonwebtoken')
-const jwt_secret = "king@123"
+const jwt_secret = process.env.SECRET_KEY;
 var fetchuser = require('../middleware/fetchuser')
 
 
@@ -22,6 +22,10 @@ var fetchuser = require('../middleware/fetchuser')
         return res.status(400).json({error: "Invalid email or password\nPassword needs to be atleast 5 characters long"})
     }
     try {
+    if (req.body.secretKey != jwt_secret){
+      return res.status(400).json({error: "Invalid Admin Credentials"})
+
+    }
     let user = await User.findOne({email: req.body.email})
     if (user){
         return res.status(400).json({error: "Check your email again"})

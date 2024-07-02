@@ -3,7 +3,6 @@ import "react-toastify/dist/ReactToastify.css";
 import React, { useState } from "react";
 import {Link} from 'react-router-dom'
 import "../css/signup.css"; // Import the corresponding CSS file
-const jwt_secret = "king@123"
 
 
 function SignUp() {
@@ -14,16 +13,7 @@ function SignUp() {
   const [secretKey, setSecretKey] = useState("");
 
   async function handleSignUp(event) {
-    if (userType === "Admin" && secretKey !== jwt_secret) {
       event.preventDefault();
-      toast.error("Invalid Admin",{
-        position: "top-center",
-        autoClose: 5000
-
-      });
-    } else {
-      event.preventDefault();
-
       const response = await fetch(
         "http://localhost:5000/api/auth/createuser",
         {
@@ -36,6 +26,7 @@ function SignUp() {
             email,
             password,
             userType,
+            secretKey
           }),
         }
       );
@@ -57,7 +48,7 @@ function SignUp() {
           autoClose: 5000
         });
       }
-    }
+    
   }
 
   return (

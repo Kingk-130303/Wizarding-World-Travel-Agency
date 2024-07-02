@@ -340,33 +340,38 @@ header
   font-weight: 800;
   padding: 20px;
   height: fit-content;
-  width: 400px;
+  max-height: 90vh;
   position: absolute;
-  margin: 100px 450px;
+  margin: 50px 45px;
   color: #f4f2f2;
   font-size: 20px;
-  background-color: rgba(255, 255, 255, 0.301); /* Semi-transparent white background */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Box shadow for glossy effect */
+  background-color: rgba(255, 255, 255, 0.301);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
   border-radius: 50px;
   cursor: default;
   text-align: center;
+  overflow-y: auto;
+}
+.slide-content::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .book-now {
-  padding: 12px 40px; /* Increased padding for better button size */
-  margin: 20px auto; /* Center the button horizontally and add margin for spacing */
-  background-color: #86ec0a; /* Background color */
-  color: #111; /* Text color */
+  position: relative;
+  padding: 12px 40px; 
+  margin: 20px auto; 
+  background-color: #86ec0a; 
+  color: #111;
   border: none;
   border-radius: 10px;
-  margin-top: 50px;
-  cursor: pointer; /* Pointer cursor on hover */
-  display: block; /* Ensures it takes up full width */
-  font-size: 16px; /* Adjust font size */
-  font-weight: bold; /* Bold font weight */
-  text-align: center; /* Center align text */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  
+  cursor: pointer; 
+  
+  font-size: 16px; 
+  font-weight: bold; 
+  text-align: center; 
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .book-now:hover {
@@ -388,12 +393,14 @@ header
   border-radius: 4px;
   cursor: pointer;
 }
+
 .slide-content h2{
   border-radius: 100px;
   color: #e7e7e0;
   background-color: rgb(6, 6, 6);
   font-size: 50px;
 }
+
 .prev-btn {
   font-size: xx-large;
   left: 20px;

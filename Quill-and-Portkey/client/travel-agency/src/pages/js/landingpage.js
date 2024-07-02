@@ -14,6 +14,8 @@ function LandingPage() {
     fetchTourData();
   }, []);
 
+  
+
 
   async function fetchLandingData() {
     try {
@@ -188,10 +190,17 @@ return (
              
               <p>Date: {formatDate(tour.date)}</p>
               <p>Description <br /><br />{tour.description}</p>
-              {/* <p>{tour.itenary}</p> */}
-             
-
-            </div> 
+              <p>
+    Itinerary:
+    <br />
+    {tour.itenary.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ))}
+  </p>            
+  </div> 
             <button id='back-button' onClick={() => document.getElementById('showcase').scrollIntoView({ behavior: 'smooth', block: 'start' })}>Home</button>
 
           </div>
