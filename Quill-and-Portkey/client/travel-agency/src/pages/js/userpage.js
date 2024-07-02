@@ -12,7 +12,7 @@ function Userpage() {
   async function fetchData(SetIsLoggedIn,setuserEmail) {
     try {
       const token = localStorage.getItem("jwtToken");
-      const response = await fetch("http://localhost:5000/api/private/user", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/api/private/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Userpage() {
 
   async function fetchTourData(settourData) {
     try {
-      const response = await fetch("http://localhost:5000/admin/allTours", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/admin/allTours", {
         method: "GET",
       });
       const data = await response.json();
@@ -54,7 +54,7 @@ function Userpage() {
   const handleBookNow = async (tourName) => {
     if (window.confirm(`Are you sure you want to book ${tourName}`)){
       try {
-        const response = await fetch("http://localhost:5000/user/booktour", {
+        const response = await fetch("https://wizardingworldtravels.vercel.app/user/booktour", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

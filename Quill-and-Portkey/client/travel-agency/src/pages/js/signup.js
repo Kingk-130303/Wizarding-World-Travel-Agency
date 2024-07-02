@@ -15,7 +15,7 @@ function SignUp() {
   async function handleSignUp(event) {
       event.preventDefault();
       const response = await fetch(
-        "http://localhost:5000/api/auth/createuser",
+        "https://wizardingworldtravels.vercel.app/api/auth/createuser",
         {
           method: "POST",
           headers: {

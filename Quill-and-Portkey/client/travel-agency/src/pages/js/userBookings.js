@@ -9,7 +9,7 @@ function UserBookings() {
   async function fetchData() {
     try {
       const token = localStorage.getItem("jwtToken");
-      const response = await fetch("http://localhost:5000/api/private/user", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/api/private/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function UserBookings() {
 
   async function fetchBookings() {
     try {
-      const response = await fetch("http://localhost:5000/user/userbookings", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/user/userbookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

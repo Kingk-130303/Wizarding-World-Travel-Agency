@@ -28,7 +28,7 @@ function Adminpage() {
   async function fetchData(SetIsLoggedIn) {
     try {
       const token = localStorage.getItem('jwtToken');
-      const response = await fetch('http://localhost:5000/api/private/admin', {
+      const response = await fetch('https://wizardingworldtravels.vercel.app/api/private/admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function Adminpage() {
   
     async function fetchUserData(setuserData) {
       try {
-        const response = await fetch('http://localhost:5000/admin/allUsers', {
+        const response = await fetch('https://wizardingworldtravels.vercel.app/admin/allUsers', {
           method: 'GET',
         });
         const data = await response.json();
@@ -61,7 +61,7 @@ function Adminpage() {
   
     async function fetchTourData(settourData) {
       try {
-        const response = await fetch('http://localhost:5000/admin/allTours', {
+        const response = await fetch('https://wizardingworldtravels.vercel.app/admin/allTours', {
           method: 'GET',
         });
         const data = await response.json();
@@ -95,7 +95,7 @@ function Adminpage() {
         const closeModal = () => setIsModalOpen(false); // Define closeModal as a closure here
         closeModal(); // Close the modal before proceeding with the deletion
   
-        const response = await fetch("http://localhost:5000/admin/deleteTour", {
+        const response = await fetch("https://wizardingworldtravels.vercel.app/admin/deleteTour", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

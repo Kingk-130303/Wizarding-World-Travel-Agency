@@ -25,7 +25,7 @@ function NewTourPackageForm() {
   async function fetchData() {
     try {
       const token = localStorage.getItem('jwtToken');
-      const response = await fetch('http://localhost:5000/api/private/admin', {
+      const response = await fetch('https://wizardingworldtravels.vercel.app/api/private/admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function NewTourPackageForm() {
     console.log(formData)
     event.preventDefault();
     try {
-        const response = await fetch('http://localhost:5000/admin/addtour', {
+        const response = await fetch('https://wizardingworldtravels.vercel.app/admin/addtour', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

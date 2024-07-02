@@ -22,7 +22,7 @@ function TourRegistrations() {
   async function fetchData() {
     try {
       const token = localStorage.getItem("jwtToken");
-      const response = await fetch("http://localhost:5000/api/private/admin", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/api/private/admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ function TourRegistrations() {
 
   async function fetchTourReg() {
     try {
-      const response = await fetch("http://localhost:5000/admin/tourreg", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/admin/tourreg", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function TourRegistrations() {
 
       // Perform the removal logic here
       if (removingUserEmail) {
-        const response = await fetch("http://localhost:5000/admin/removetouruser", {
+        const response = await fetch("https://wizardingworldtravels.vercel.app/admin/removetouruser", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -119,7 +119,7 @@ function TourRegistrations() {
     try {
       setIsModalOpen(false); // Close the modal before proceeding with the addition
 
-      const response = await fetch("http://localhost:5000/admin/findreguser", {
+      const response = await fetch("https://wizardingworldtravels.vercel.app/admin/findreguser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ function TourRegistrations() {
         return;
       }
 
-      const addUserResponse = await fetch("http://localhost:5000/admin/addtouruser", {
+      const addUserResponse = await fetch("https://wizardingworldtravels.vercel.app/admin/addtouruser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

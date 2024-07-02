@@ -20,7 +20,7 @@ function LandingPage() {
   async function fetchLandingData() {
     try {
       const token = localStorage.getItem('jwtToken');
-      const response = await fetch('http://localhost:5000/api/private/landinguser', {
+      const response = await fetch('https://wizardingworldtravels.vercel.app/api/private/landinguser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const [TourData, setTourData] = useState(null);
 
 async function fetchTourData() {
   try {
-    const response = await fetch('http://localhost:5000/api/private/tourdata', {
+    const response = await fetch('https://wizardingworldtravels.vercel.app/api/private/tourdata', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
