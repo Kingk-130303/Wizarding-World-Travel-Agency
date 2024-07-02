@@ -13,7 +13,7 @@ connectToMongo();
 App.use(express.json())
 App.use(cookieParser())
 App.use(cors({
-    origin: 'https://wizardingworldtravelagency.vercel.app/',
+    origin: 'https://wizardingworldtravelagency.vercel.app',
     credentials: true
   }));
   
