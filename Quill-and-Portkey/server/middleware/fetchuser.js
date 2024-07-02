@@ -16,7 +16,7 @@ const fetchuser = (req, res, next) => {
       if (data.usertype !== 'User'){
         return res
         .status(401)
-        .send({ error: "Please authenticate using a user token" });
+        .send({ error: "Please authenticate using a User token" });
       }
       // console.log(req.email)
       // console.log(data)
